@@ -1,20 +1,80 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-drawer-container class="example-container" autosize style="    overflow: hidden;">
+  <mat-drawer #drawer class="example-sidenav" style="overflow:hidden;">
+    <app-side-nav-user-avatar></app-side-nav-user-avatar>
 
+    <button mat-menu-item autofocus="false" [matMenuTriggerFor]="vertebrates">Wallpapers</button>
+    <button mat-menu-item [matMenuTriggerFor]="invertebrates">Vectors</button>
+    <mat-menu #vertebrates="matMenu">
+      <button mat-menu-item [matMenuTriggerFor]="fish">Fantasy</button>
+      <button mat-menu-item [matMenuTriggerFor]="amphibians">Adventure</button>
+      <button mat-menu-item [matMenuTriggerFor]="reptiles">Horror</button>
+      <button mat-menu-item>Birds</button>
+      <button mat-menu-item>Mammals</button>
+    </mat-menu>
+    <mat-menu #invertebrates="matMenu">
+      <button mat-menu-item>Insects</button>
+      <button mat-menu-item>Molluscs</button>
+      <button mat-menu-item>Crustaceans</button>
+      <button mat-menu-item>Corals</button>
+      <button mat-menu-item>Arachnids</button>
+      <button mat-menu-item>Velvet worms</button>
+      <button mat-menu-item>Horseshoe crabs</button>
+    </mat-menu>
+    <mat-menu #fish="matMenu">
+      <button mat-menu-item>Baikal oilfish</button>
+      <button mat-menu-item>Bala shark</button>
+      <button mat-menu-item>Ballan wrasse</button>
+      <button mat-menu-item>Bamboo shark</button>
+      <button mat-menu-item>Banded killifish</button>
+    </mat-menu>
+
+    <mat-menu #amphibians="matMenu">
+      <button mat-menu-item>Sonoran desert toad</button>
+      <button mat-menu-item>Western toad</button>
+      <button mat-menu-item>Arroyo toad</button>
+      <button mat-menu-item>Yosemite toad</button>
+    </mat-menu>
+
+    <mat-menu #reptiles="matMenu">
+      <button mat-menu-item>Banded Day Gecko</button>
+      <button mat-menu-item>Banded Gila Monster</button>
+      <button mat-menu-item>Black Tree Monitor</button>
+      <button mat-menu-item>Blue Spiny Lizard</button>
+      <button mat-menu-item disabled>Velociraptor</button>
+    </mat-menu>
+  </mat-drawer>
+
+  <div class="example-sidenav-content grid">
+    <div>
+    <button type="button"   mat-icon-button  mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="margin"><app-header></app-header></div>
+    <div >
+      <button mat-icon-button [matMenuTriggerFor]="appMenu"   [matMenuTriggerData]="{name: 'Sally'}">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+    <mat-menu #appMenu="matMenu">
+      <ng-template matMenuContent let-name="name" yPosition="after">
+        <!--<button mat-menu-item>Settings</button>-->
+        <button mat-menu-item>Log off {{name}}</button>
+      </ng-template>
+    </mat-menu>
+    </div>
+    <app-body></app-body>
+
+
+
+
+
+
+
+  </div>
+
+<div class="grid">
+
+<app-footer></app-footer>
+</div>
+
+</mat-drawer-container>

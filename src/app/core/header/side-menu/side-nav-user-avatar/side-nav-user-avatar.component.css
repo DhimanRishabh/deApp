@@ -1,0 +1,8 @@
+.imageAvatar{
+
+  width:30px;
+  height: auto;
+}
+.imageAvatar img{
+  border-radius: 20px;
+}

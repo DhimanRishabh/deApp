@@ -1,0 +1,19 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.full-width{
+  width: -webkit-fill-available;
+}
+body{
+  overflow: hidden;
+}
+
+
+.tags{
+  display: flex;
+}
+ul{
+  list-style: none;
+  display: flex;
+}
+ul>li{
+margin-right: 4%;
+}

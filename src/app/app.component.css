@@ -1,0 +1,37 @@
+.example-container {
+  height: 100vh;
+}
+
+.example-sidenav-content {
+  display: flex;
+}
+
+div {
+  display: inline-flex;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.logout {
+  margin-left: auto;
+}
+
+.imageAvatar {
+
+  width: 30px;
+  height: auto;
+}
+
+.imageAvatar img {
+  border-radius: 20px;
+}
+
+.margin {
+  margin: auto;
+}
+
+.grid {
+  display: grid;
+}
